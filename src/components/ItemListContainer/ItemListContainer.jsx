@@ -18,7 +18,7 @@ export const ItemListContainer = ()=>{
     },[])
 
     return(
-        <div >
+        <div className="mx-5">
             {
                 loading
                     ?<h2>Cargando...</h2>
