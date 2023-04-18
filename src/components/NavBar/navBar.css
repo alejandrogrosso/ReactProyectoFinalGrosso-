@@ -1,0 +1,10 @@
+.linkOutDecoration{
+    text-decoration :none;
+    color : #151414
+}
+.navBar{
+    background:#E9E5E4
+}
+.linkOutDecoration:hover{
+color:black;
+}
