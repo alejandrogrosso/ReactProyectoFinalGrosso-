@@ -4,8 +4,7 @@ import {ItemCount} from "../ItemCount/ItemCount";
 export const CartWidget = () => {
     return(
         <div className="d-flex ">
-            <ItemCount/>
-            <p><BsCartFill/></p>
+            <p size="lg"><BsCartFill/></p>
         </div>
     )
 }
