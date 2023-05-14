@@ -10,23 +10,33 @@ import{
     Route
 } from "react-router-dom";
 import {ItemDetailContainer} from "./components/ItemDetailContainer/ItemDetailContainer";
+import {CartProvider} from "./components/context/CartContext";
+import {Cart} from "./components/Cart/Cart";
+import {UiProvider} from "./components/context/UiContext";
+import {Checkout} from "./components/Checkout/Checkout";
 
 function App() {
+
   return (
-    <div>
-        <Router>
-            <NavBar/>
-            <Routes>
-                <Route path='/' element={<ItemListContainer />}/>
-                <Route path='/products/:categoryId' element={<ItemListContainer />}/>
-                <Route path ="*" element={<Navigate to='/'/> }/>
-                <Route path='/detail/:itemId' element={<ItemDetailContainer />}/>
-            </Routes>
-        </Router>
-
-
-    </div>
+      <UiProvider>
+          <CartProvider>
+            <div>
+                <Router>
+                    <NavBar/>
+                    <Routes>
+                        <Route path='/' element={<ItemListContainer />}/>
+                        <Route path='/products/:categoryId' element={<ItemListContainer />}/>
+                        <Route path ="*" element={<Navigate to='/'/> }/>
+                        <Route path='/detail/:itemId' element={<ItemDetailContainer />}/>
+                        <Route path='/cart' element={<Cart/>}/>
+                        <Route path='/checkout' element={<Checkout/>}/>
+                    </Routes>
+                </Router>
+            </div>
+          </CartProvider>
+      </UiProvider>
   );
+
 }
 
 export default App;

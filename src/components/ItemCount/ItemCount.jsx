@@ -1,26 +1,25 @@
-import {useState} from "react";
+
 import {Button} from "react-bootstrap";
 import {AiOutlinePlus} from "react-icons/ai";
 import {GrFormSubtract} from "react-icons/gr";
 import {FaTrashAlt} from "react-icons/fa";
 
-export const ItemCount = () => {
-    const [counter, setCounter] = useState(0);
+export const ItemCount = ({maxCount, modifyCounter, counter}) => {
+
     const addUp = () => {
-        setCounter(counter + 1)
+        modifyCounter(counter < maxCount ? counter + 1: counter)
     }
     const subtract = () => {
-        setCounter(counter > 0 ? counter - 1 : counter)
+        modifyCounter(counter > 0 ? counter - 1 : counter)
     }
     const restart = () => {
-        setCounter(0)
+        modifyCounter(0)
     }
     return (
-        <div className="d-flex justify-content-center m-2">
+        <div className="d-flex ms-5">
             <Button onClick={addUp} variant="light"><AiOutlinePlus/></Button>
-            <h3>{counter}</h3>
+            <h3 className="mx-2"> {counter} </h3>
             <Button onClick={subtract} variant="light"><GrFormSubtract/></Button>
-            <Button onClick={restart} variant="light"><FaTrashAlt/></Button>
         </div>
     )
 

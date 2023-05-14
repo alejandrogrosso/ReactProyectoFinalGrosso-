@@ -15,15 +15,15 @@ export const NavBar = () => {
                         <NavDropdown title="Categorias" id="basic-nav-dropdown">
                             <NavDropdown.Item>
                                 < Link className="linkOutDecoration"
-                                       to="/products/electrodomestico">Electrodomestico</Link>
+                                       to="/products/maquillaje">Maquillajes</Link>
                             </NavDropdown.Item>
                             <NavDropdown.Item>
-                                <Link className="linkOutDecoration" to="/products/ropa">Ropa</Link>
+                                <Link className="linkOutDecoration" to="/products/perfume">Perfumes</Link>
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <CartWidget/>
+                        <Link className="linkOutDecoration" to="/cart"><CartWidget/></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
